@@ -134,7 +134,7 @@ const Articles = () => {
           .then(res => res.json())
           // Feed also contains comments, therefore we filter for articles only
           .then(data => data.items.filter(item => item.categories.length > 0))
-          // .then(data => data.items.filter(item => item.title.length > 0))
+          // .then(data => data.items.filter(item => item.position.length > 0))
           .then(newArticles => newArticles.slice(0, MAX_ARTICLES))
           .then(articles => setArticles(articles))
           .catch(error => console.log(error))
@@ -150,7 +150,7 @@ const Articles = () => {
       animate={articlesControls}
     >
       <StyledContentWrapper>
-        <h3 className="section-title">Latest Articles</h3>
+        <h3 className="section-title">Experience</h3>
         <div className="articles">
           {articles
             ? articles.map(item => (
@@ -158,7 +158,7 @@ const Articles = () => {
                   href={item.link}
                   target="_blank"
                   rel="nofollow noopener noreferrer"
-                  title={item.title}
+                  title={item.position}
                   aria-label={item.link}
                   key={item.link}
                 >
@@ -168,8 +168,10 @@ const Articles = () => {
                         {item.categories[2]}
                       </Underlining>
                     </span>
-                    <h4 className="title">{item.title}</h4>
-                    <span className="date">{parseDate(item.pubDate)}</span>
+                    <h4 className="title">{item.position}</h4>
+                    <span className="date">
+                      {parseDate(item.startDate)} - {parseDate(item.endDate)}
+                    </span>
                   </div>
                 </a>
               ))

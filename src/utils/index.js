@@ -16,30 +16,30 @@ export const parseDate = date => {
 
   switch (month) {
     case "01":
-      return day + " January " + year
+      return day + " Jan " + year
     case "02":
-      return day + " February " + year
+      return day + " Feb " + year
     case "03":
-      return day + " March " + year
+      return day + " Mar " + year
     case "04":
-      return day + " April " + year
+      return day + " Apr " + year
     case "05":
       return day + " May " + year
     case "06":
-      return day + " June " + year
+      return day + " Jun " + year
     case "07":
-      return day + " July " + year
+      return day + " Jul " + year
     case "08":
-      return day + " August " + year
+      return day + " Aug " + year
     case "09":
-      return day + " September " + year
+      return day + " Sep " + year
     case "10":
-      return day + " October " + year
+      return day + " Oct " + year
     case "11":
-      return day + " November " + year
+      return day + " Nov " + year
     case "12":
-      return day + " December " + year
+      return day + " Dec " + year
     default:
-      return "No publication date"
+      return "Present"
   }
 }
