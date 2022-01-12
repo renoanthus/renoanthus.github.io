@@ -1,0 +1,31 @@
+{
+    "status": "ok",
+    "items": [
+      {
+        "position": "Idekite Indonesia",
+        "jobType": "Full-time",
+        "startDate": "2017-10-01",
+        "endDate": "2021-04-31",
+        "categories": [
+          "Senior Software Engineer",
+          "Senior Software Engineer",
+          "Senior Software Engineer",
+          "Senior Software Engineer",
+          "Senior Software Engineer"
+        ]
+      },
+      {
+        "position": "Zethlabs Indonesia",
+        "jobType": "Full-time",
+        "startDate": "2019-02-01",
+        "endDate": "Present",
+        "categories": [
+          "Freelance Programmer",
+          "Freelance Programmer",
+          "Freelance Programmer",
+          "Freelance Programmer",
+          "Freelance Programmer"
+        ]
+      }
+    ]
+  }
