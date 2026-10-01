@@ -1,0 +1,33 @@
+---
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
+
+interface Props {
+  name: string
+  size?: number
+  class?: string
+  label?: string
+}
+
+const { name, size = 20, class: className, label } = Astro.props
+
+const iconDir = join(
+  process.cwd(),
+  "node_modules/@phosphor-icons/core/assets/regular"
+)
+const raw = readFileSync(join(iconDir, `${name}.svg`), "utf8")
+const inner = raw.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "")
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  fill="currentColor"
+  width={size}
+  height={size}
+  class={className}
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
+  set:html={inner}
+/>

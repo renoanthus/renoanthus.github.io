@@ -1,0 +1,38 @@
+---
+import Icon from "./Icon.astro"
+import { profile } from "../data/profile"
+
+const year = new Date().getFullYear()
+---
+
+<footer class="border-t border-line">
+  <div class="container-page flex flex-col gap-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+    <p>
+      &copy; {year} {profile.name}. Built with Astro and Tailwind CSS.
+    </p>
+    <div class="flex items-center gap-1">
+      <a
+        href={profile.github}
+        target="_blank"
+        rel="noopener"
+        class="grid size-9 place-items-center rounded-full hover:bg-surface-2 hover:text-fg"
+      >
+        <Icon name="github-logo" label="GitHub" />
+      </a>
+      <a
+        href={profile.linkedin}
+        target="_blank"
+        rel="noopener"
+        class="grid size-9 place-items-center rounded-full hover:bg-surface-2 hover:text-fg"
+      >
+        <Icon name="linkedin-logo" label="LinkedIn" />
+      </a>
+      <a
+        href={`mailto:${profile.email}`}
+        class="grid size-9 place-items-center rounded-full hover:bg-surface-2 hover:text-fg"
+      >
+        <Icon name="envelope-simple" label="Email" />
+      </a>
+    </div>
+  </div>
+</footer>

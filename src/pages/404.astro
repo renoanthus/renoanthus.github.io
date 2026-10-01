@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro"
+import Navbar from "../components/Navbar.astro"
+import Footer from "../components/Footer.astro"
+---
+
+<Base title="Page not found | Reno Anthus">
+  <Navbar />
+  <main
+    id="main"
+    class="container-page flex min-h-[60dvh] flex-col justify-center py-24"
+  >
+    <p class="font-mono text-sm text-accent">404</p>
+    <h1 class="mt-3 text-4xl font-semibold tracking-tighter md:text-5xl">
+      This page does not exist.
+    </h1>
+    <p class="mt-4 max-w-[48ch] text-muted">
+      The link may be from the previous version of this site.
+    </p>
+    <div class="mt-8">
+      <a href="/" class="btn-primary">
+        Back to home
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Base>

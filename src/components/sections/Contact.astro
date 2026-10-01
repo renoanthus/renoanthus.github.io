@@ -1,0 +1,70 @@
+---
+import Icon from "../Icon.astro"
+import { profile } from "../../data/profile"
+
+const channels = [
+  {
+    icon: "whatsapp-logo",
+    label: "WhatsApp",
+    value: profile.phone,
+    href: profile.whatsapp,
+  },
+  {
+    icon: "linkedin-logo",
+    label: "LinkedIn",
+    value: "in/renoanthus",
+    href: profile.linkedin,
+  },
+  {
+    icon: "github-logo",
+    label: "GitHub",
+    value: "renoanthus",
+    href: profile.github,
+  },
+]
+---
+
+<section id="contact" class="border-t border-line bg-surface">
+  <div class="container-page grid gap-12 py-20 md:grid-cols-12 md:py-28">
+    <div class="md:col-span-7" data-reveal>
+      <h2 class="text-4xl font-semibold tracking-tighter text-balance md:text-5xl">
+        Have a system that needs building or fixing?
+      </h2>
+      <p class="mt-5 max-w-[52ch] text-lg text-muted">
+        Open to full-time roles and project work, remote or on-site. Email is
+        the fastest way to reach me.
+      </p>
+      <a
+        href={`mailto:${profile.email}`}
+        class="group mt-8 inline-flex items-center gap-3 text-xl font-medium break-all underline decoration-line decoration-2 underline-offset-8 transition-colors hover:decoration-accent md:text-2xl"
+      >
+        <Icon name="envelope-simple" size={26} class="shrink-0 text-accent" />
+        {profile.email}
+      </a>
+    </div>
+
+    <ul
+      class="space-y-3 self-end md:col-span-5"
+      data-reveal
+      style="--reveal-index: 1"
+    >
+      {channels.map((channel) => (
+        <li>
+          <a
+            href={channel.href}
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-4 rounded-2xl border border-line bg-bg p-4 transition-colors hover:border-fg"
+          >
+            <Icon name={channel.icon} size={22} class="text-accent" />
+            <span class="flex-1">
+              <span class="block text-sm text-muted">{channel.label}</span>
+              <span class="font-medium">{channel.value}</span>
+            </span>
+            <Icon name="arrow-up-right" size={16} class="text-muted" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { experience } from "../../data/experience"
+---
+
+<section id="experience" class="border-t border-line bg-surface">
+  <div class="container-page py-20 md:py-28">
+    <h2 class="section-title" data-reveal>
+      Experience
+    </h2>
+
+    <ol class="mt-12 space-y-14">
+      {experience.map((job) => (
+        <li class="grid gap-4 md:grid-cols-12 md:gap-10" data-reveal>
+          <div class="md:col-span-4">
+            <p class="font-mono text-sm text-muted">{job.period}</p>
+            <h3 class="mt-2 text-xl font-semibold tracking-tight">
+              {job.company}
+            </h3>
+            <p class="mt-1 text-muted">
+              {job.role}
+              {job.current && (
+                <span class="ml-2 rounded-full bg-accent-soft px-2.5 py-0.5 align-middle text-xs font-medium text-accent">
+                  Current
+                </span>
+              )}
+            </p>
+          </div>
+          <ul class="space-y-3 border-l border-line pl-6 md:col-span-8">
+            {job.points.map((point) => (
+              <li class="max-w-[68ch] leading-relaxed text-muted">{point}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
